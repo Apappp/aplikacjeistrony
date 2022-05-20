@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(40, 40, 40);
+            display: flex;
+            justify-content: center;
+            height: 700px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://dummyimage.com/300" alt="">
+    <script>
+        const img = document.querySelector('img');
+        const img2 = "<img src=\"https://dummyimage.com/350\">"
+        img.addEventListener('mouseover', function() {
+            img.append(img2);
+            
+        })
+    </script>
+</body>
+</html>

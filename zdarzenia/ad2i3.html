@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(40, 40, 40);
+            display: flex;
+            justify-content: center;
+            height: 700px;
+            align-items: center;
+        }
+
+        div {
+            background-color: white;
+            font-family: monospace;
+            width: 500px;
+            height: 200px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti et sit velit soluta recusandae? Laudantium soluta ipsam hic? Dolore, est. Alias, velit. Neque, maxime hic. Atque molestias iste cum blanditiis maiores sapiente voluptas doloribus dignissimos sunt, dolor neque eos delectus quos qui, porro mollitia reprehenderit aspernatur? Animi expedita quis, laborum a quidem cumque! Ipsa eligendi ex dolorum incidunt sunt magnam harum maiores voluptate. Cupiditate dolore distinctio repellat.</div>
+    <script>
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        const div = document.querySelector('div');
+        div.addEventListener('mouseover', function(){
+            div.textContent = "Aut odit velit est suscipit culpa est corporis quia in reiciendis consequatur eum labore voluptatem et rerum tempora et commodi enim! Vel eaque temporibus et veniam minima ut esse rerum non fugit internos aut libero enim. Qui ullam cupiditate sit dolores molestias rem galisum voluptatem eum reprehenderit quidem eos debitis nihil.";
+        })
+        div.addEventListener('mouseout', function() {
+            div.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti et sit velit soluta recusandae? Laudantium soluta ipsam hic? Dolore, est. Alias, velit. Neque, maxime hic. Atque molestias iste cum blanditiis maiores sapiente voluptas doloribus dignissimos sunt, dolor neque eos delectus quos qui, porro mollitia reprehenderit aspernatur? Animi expedita quis, laborum a quidem cumque! Ipsa eligendi ex dolorum incidunt sunt magnam harum maiores voluptate. Cupiditate dolore distinctio repellat.";
+        })
+        div.addEventListener('click', function() {
+            let c1 = getRandomIntInclusive(0,255);
+            let c2 = getRandomIntInclusive(0,255);
+            let c3 = getRandomIntInclusive(0,255);
+            console.log(c1,c2,c3);
+            div.style.backgroundColor = "rgb("+c1+", "+ c2 + ", " +c3+ ")";
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .naglowek{
+            color: orange;
+            font-family: arial;
+        }
+        .div{
+            color: yellow;
+            background-color: blue;
+        }
+        .p1{
+            text-decoration: underline;
+        }
+
+        .p2{
+            font-size: 40px;
+        }
+        
+        .zmiana{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="naglowek">Nagłówek</h1>
+    <div class="div">Treść z diva</div>
+    <p class="p1">Pierwszy akapit</p>
+    <p class="p2">Drugi akapit</p>
+    <script>
+        const naglowekh1 = document.querySelector('h1.naglowek');
+        const diw = document.querySelector('div.div');
+        const akapity = document.querySelectorAll('p');
+        akapity[0].textContent += 'lorem asdf asdfa dfg f';
+        naglowekh1.textContent = 'JavaScript';
+        diw.style.fontFamily = 'Courier New';
+        diw.classList.add('zmiana');
+        const nowyH2 = document.createElement('h2');
+        nowyH2.textContent = 'Aplikacje internetowe';
+        akapity[1].appendChild(nowyH2);
+        naglowekh1.remove();
+    </script>
+</body>
+</html>

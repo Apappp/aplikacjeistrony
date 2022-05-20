@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="checkbox" name="jeden" value="jeden">
+        <label for="jeden"> Jeden </label><br>
+        <input type="checkbox" name="dwa" value="dwa">
+        <label for="dwa"> Dwa </label><br>
+        <input type="checkbox" name="trzy" value="trzy">
+        <label for="trzy"> Trzy </label><br>
+        <button>submit</button>
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        let j = document.querySelector('input[name="jeden"]');
+        let d = document.querySelector('input[name="dwa"]');
+        let t = document.querySelector('input[name="trzy"]');
+        const div = document.querySelector('.wynik')
+
+        formularz.addEventListener('submit', function(e) {
+            e.preventDefault()
+            div.textContent = " "
+            if (j.checked == true)
+                div.textContent = j.value;
+            if (d.checked == true)
+                div.textContent += " " + d.value;
+            if (t.checked == true)
+                div.textContent += " " + t.value;
+        })
+    </script>
+</body>
+</html>

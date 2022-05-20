@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(40, 40, 40);
+    color: magenta;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 200px 0px 200px;
+}
+
+h1 {
+    color: red;
+    font-size: 40px;
+    align-self: center;
+}
+.akapit {
+    font-size: 20px;
+    text-align: justify;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+li {
+    height: 100px;
+    width: 200px;
+    margin: 10px;
+    background-color: rgb(60, 60, 60);
+}
+
+li:hover {
+    cursor: pointer;
+    background-color: rgb(65, 65, 65)
+}

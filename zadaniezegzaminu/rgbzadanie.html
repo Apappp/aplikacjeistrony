@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: monospace;
+            font-size: 15px;
+        }
+
+        input {
+            position: absolute;
+            left: 320px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="red">Wpisz wartość koloru czerwonego: </label>
+        <input type="number" name="red" id="red"><br>
+        <span class="error"></span><br>
+        <label for="green">Wpisz wartość koloru zielonego: </label>
+        <input type="number" name="green" id="green"><br>
+        <span class="error"></span><br>
+        <label for="blue">Wpisz wartość koloru niebieskiego: </label>
+        <input type="number" name="blue" id="blue"><br>
+        <span class="error"></span><br>
+        <input type="submit" value="Zmień kolor tła">
+    </form>
+    <script>
+        const formularz = document.querySelector('form');
+        const redi = document.querySelector('input[name="red"]');
+        const greeni = document.querySelector('input[name="green"]');
+        const bluei = document.querySelector('input[name="blue"]');
+        const errors = document.querySelectorAll('span.error');
+        
+        function naRgb(r, g, b){
+            return "rgb(" + r + ", " + g + ", " + b + ")";
+        }
+
+        formularz.addEventListener('submit', function(e){
+            e.preventDefault();
+            const red = redi.value;
+            const tred = 255-red;
+            const green = greeni.value;
+            const tgreen = 255-green;
+            const blue = bluei.value;
+            const tblue = 255-blue;
+            errors.forEach(error=>{
+                error.textContent = "";
+            })
+            if(red < 0 || red > 255){
+                errors[0].textContent = "Błędne dane";
+                return false;
+            }
+            if(green < 0 || green > 255){
+                errors[1].textContent = "Błędne dane";
+                return false;
+            }
+            if(blue < 0 || blue > 255){
+                errors[2].textContent = "Błędne dane";
+                return false;
+            }
+            document.body.style.backgroundColor = naRgb(red, green, blue);
+            document.body.style.color = naRgb(tred, tgreen, tblue);
+        });
+    </script>
+</body>
+</html>
